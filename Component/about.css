@@ -1,0 +1,29 @@
+.projects {
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects h3 {
+  border: 3px solid black;
+  border-radius: 50px;
+  width: 7rem;
+  align-self: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* height: max-content; */
+}
+
+.cards p {
+  margin-top: 2rem;
+  width: 30%;
+  background-color: rgba(17, 16, 16, .7);
+  padding: .4rem;
+  text-align: center;
+  color: whitesmoke;
+}
