@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import Home from './Home.jsx';
 import GitHubRepos from './GitHubRepos.jsx';
 import { GitHubRepo } from './GitHubRepos.jsx';
-import About from '../Component/About.jsx';
-import Contact from '../Component/Contact.jsx';
+import About from './About.jsx';
+import Contact from './Contact.jsx';
 import './style.css';
 
 function ErrorFallBack({ error }) {
