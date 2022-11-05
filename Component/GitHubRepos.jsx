@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import './githubrepos.css';
 
 export default function GitHubRepos() {
@@ -34,11 +34,9 @@ export default function GitHubRepos() {
       <h3>My GitHub Repos</h3>
       {repoList.slice(skip, page * PER_PAGE).map((repo) => {
         return (
-          <li key={repo.id} className="repo-list">
-            {' '}
-            {repo.id} <span></span> {repo.full_name} <span></span>{' '}
-            {repo.clone_url}{' '}
-          </li>
+          <NavLink key={repo.id} className="repo-list">
+            {repoList.indexOf(repo) + 1}. {repo.full_name} <br/>
+          </NavLink>
         );
       })}
 
