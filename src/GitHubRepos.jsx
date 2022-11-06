@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom'
 import './githubrepos.css';
 
 export default function GitHubRepos() {
@@ -27,15 +27,19 @@ export default function GitHubRepos() {
       });
   }, []);
 
+  // let location = useLocation();
 
+  // React.useEffect(() => {
+  //   repo
+  // }, [location])
 
   return (
     <div className="repo-container">
       <h3>My GitHub Repos</h3>
       {repoList.slice(skip, page * PER_PAGE).map((repo) => {
         return (
-          <NavLink key={repo.id} className="repo-list">
-            {repoList.indexOf(repo) + 1}. {repo.full_name} <br/>
+          <NavLink to={`/GitHubRepos/${repo.id}`} key={repo.id} className="repo-list" >
+            {repoList.indexOf(repo) + 1}. {repo.full_name} {repo.clone_url}<br/>
           </NavLink>
         );
       })}
@@ -69,9 +73,37 @@ export default function GitHubRepos() {
         {' '}
         Page: {page} of {pages}{' '}
       </p>
+
       <Outlet />
+
     </div>
   );
 }
 
 
+function GitHubRepo () {
+
+  let { GitHubRepoID } = useParams();
+
+
+  return (
+    <div>
+      <h3>Clicked GitHub Repo</h3>
+      <p> { GitHubRepoID } </p>
+    </div>
+    )
+}
+
+
+function NewRepo () {
+  return (
+    <div>
+      <button>Click to Visit GitHub Profile</button>
+    </div>
+  );
+}
+
+export {
+  GitHubRepo,
+  NewRepo
+}
