@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom';
 import Home from './Home.jsx';
 import GitHubRepos from './GitHubRepos.jsx';
-import { GitHubRepo } from './GitHubRepos.jsx';
+import GitHubRepo from './GitHubRepo.jsx';
 import About from './About.jsx';
 import Contact from './Contact.jsx';
 import './style.css';
@@ -76,7 +76,7 @@ export default function App() {
             <Route path='/Home' element={< Home />} />
             <Route path='/About' element={< About />} />
             <Route path='/GitHubRepos' element={< GitHubRepos />} />
-              <Route path=':GitHubRepoID' element={< GitHubRepo />}>
+              <Route path=':GitHubRepoID' element={< GitHubRepo />} >
             </Route>
             <Route path='/Contact' element={< Contact />} />
             <Route path='*' element={< PageNotFound />} />

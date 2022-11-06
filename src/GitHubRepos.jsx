@@ -74,15 +74,4 @@ export default function GitHubRepos() {
   );
 }
 
-function GitHubRepo () {
-  return (
-    <div>
-      <h3>Clicked GitHub Repo</h3>
-    </div>
-  )
-}
 
-
-export {
-  GitHubRepo
-}
